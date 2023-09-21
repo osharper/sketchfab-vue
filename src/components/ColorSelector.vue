@@ -7,8 +7,7 @@
       colors: Array, // Array of color objects: { name: string, value: [r, g, b], id: string }
     },
     setup() {
-      const sketchfabStore = useSketchfabStore();
-      const activeColor = computed(() => sketchfabStore.activeColor);
+      const activeColor = computed(() => useSketchfabStore().activeColor);
 
       return {
         activeColor,
@@ -36,8 +35,8 @@
 </script>
 
 <template>
-    <div class="color-selector">
-      <div
+    <ul class="color-selector">
+      <li
         v-for="color in colors"
         :key="color.id"
         @click="selectColor(color)"
@@ -46,8 +45,8 @@
       >
         <div class="color-circle" :style="{ backgroundColor: rgbToHex(color.value) }"></div>
         <div class="color-label">{{ color.name }}</div>
-      </div>
-    </div>
+    </li>
+  </ul>
 </template>
 
 <style scoped>
