@@ -1,0 +1,32 @@
+@import './base.css';
+
+header {
+  padding-left: 2em;
+}
+
+#app {
+  font-weight: normal;
+}
+
+main {
+  height: 100%;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  #app {
+    height: calc(100vh - 60px);
+  }
+}
